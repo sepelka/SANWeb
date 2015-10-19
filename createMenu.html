@@ -168,7 +168,20 @@
 	 function createMenu(data,level)
 	  {
 	  	var html, htmlPre, htmlPost;
-	  	if (level==0){
+	  	
+        if (levev==0) {
+        	htmlPre='<div id="nav">
+	 		 		<div class="nav_sup">
+	 		 			<nav>
+	 		 				<ul class="list_nav_sup">';
+	 		htmlPost='</ul>
+	 		 			</nav>
+	 		 		</div>
+	 		 	</div>';
+	 		htmlIter='<li class="active"> <a class="active" href="@pxURLMenu" title="@pxNameMenu"> @pxNameMenu </a> </li>';
+
+        }
+	  	if (level==1){
 	  		htmlPre='<div class="navMain">
 	 		 			<div class="nav_control">
 	 		 				<a href="#nav">Navigation</a>
@@ -178,7 +191,7 @@
 	 		 				<nav>
 	 		 					<ul role="menubar" aria-hidden="false">';
 
-	 		 					htmlPost='</ul>
+	 		htmlPost='</ul>
 	 		 			</nav>
 	 		 		</div>
 	 		 		<div class="nav_menu_active">
@@ -188,7 +201,24 @@
 	 		 				</ul>
 	 		 			</nav>
 	 		 		</div>
-	 		 	</div>';}
+	 		 	</div>';
+
+	 		htmlIter='<li class="menu-item1" role="menuitem" aria-haspopup="true">
+	 		 						<span class="menufirst" tabindex="0">@pxNameMenu</span>"';}
+	  	if (level==2){
+	  		htmlPre='<div class="submenu" role="menu" aria-hidden="true" style="display: none; opacity: 1;">
+	 		 							<div class="list"> 
+	 		 								<ul>';
+	 		htmlPost='<li class="category_list info"> </li>
+	 		 								</ul>
+	 		 							</div>
+	 		 						</div>';
+	 		htmlIter='<li class="category_list category_list_last">
+	 		 										<!-- LEVEL2 --> <a href="@pxURLMenu" class="category_header"> <strong>@pxNameMenu<</strong></a>@pxSubMenu</li>';
+	 	if (level==3){
+	  		htmlPre='<ul>';
+	 		htmlPost='</ul>';
+	 		htmlIter='<li> <a href="@pxURLMenu">@pxNameMenu</a> </li>';
 
 
 	  }
